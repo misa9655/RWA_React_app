@@ -1,30 +1,21 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { BrowserRouter, Route } from 'react-router-dom'
 
-import { test } from '../actions'
+import Navigacija from './navigacija'
 
 class App extends Component {
     
     
     render() {
         return (
-            <div>
-                {this.props.text}
-                <button onClick={this.props.test}>click</button>
-            </div>
+            <BrowserRouter>
+                <div>
+                    <Navigacija />
+                  
+                </div>
+            </BrowserRouter>
         )
     }
 }
 
-const mapStateToProps = ({test}) => {
-    return {
-        text: test.text
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({test}, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
