@@ -17,13 +17,13 @@ class Navigacija extends Component {
                                     <Link className='nav-link' to='/'>Kontrolna tabla</Link>
                                 </li>
                                 <li className="nav-item px-2">
-                                    <Link className='nav-link' to='/'>Postovi</Link>
+                                    <Link className='nav-link' to='/posts'>Postovi</Link>
                                 </li>
                                 <li className="nav-item px-2">
-                                    <Link className='nav-link' to='/'>Kategorije</Link>
+                                    <Link className='nav-link' to='/category'>Kategorije</Link>
                                 </li>
                                 <li className="nav-item px-2">
-                                    <Link className='nav-link' to='/'>Korisnici</Link>
+                                    <Link className='nav-link' to='/users'>Korisnici</Link>
                                 </li>
                             </ul>
 

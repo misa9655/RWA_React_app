@@ -1,0 +1,1 @@
+export const DODAJ_KATEGORIJU = 'dodaj_kategoriju';

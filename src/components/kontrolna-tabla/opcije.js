@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import DodajPost from './modals/dodajPost'
-import DodajKategoriju from './modals/dodajKategoriju'
-import DodajAdmina from './modals/dodajAdmina'
+import DodajPost from '../modals/dodajPost'
+import DodajKategoriju from '../modals/dodajKategoriju'
+import DodajAdmina from '../modals/dodajAdmina'
 
 class Opcije extends Component {
     render() {
@@ -23,7 +23,7 @@ class Opcije extends Component {
                                 </Link>
                             </div>
                             <div className="col-md-3">
-                                <Link to="#" className="btn btn-warning btn-block" data-toggle="modal" data-target="#dodajAdmina">
+                                <Link to="#" className="btn btn-warning btn-block text-white" data-toggle="modal" data-target="#dodajAdmina">
                                     <i className="fa fa-plus"></i> Dodaj admina
                                 </Link>
                             </div>

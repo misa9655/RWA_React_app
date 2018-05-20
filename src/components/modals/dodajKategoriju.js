@@ -1,6 +1,27 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import { dodajKategoriju } from '../../actions'
 
 class DodajKategoriju extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            kategorija: ''
+        }
+    }
+
+    handleInputChange({target}){
+        this.setState({
+            kategorija: target.value
+        });
+    }
+    sacuvaj()
+    {
+        this.props.dodajKategoriju(this.state.kategorija);
+    }
+
     render() {
         return (
             <div className="modal fade" id="dodajKategoriju">
@@ -14,13 +35,13 @@ class DodajKategoriju extends Component {
                             <form>
                                 <div className="form-group">
                                     <label>Naslov</label>
-                                    <input type="text" className="form-control" />
+                                    <input type="text" value={this.state.kategorija} onChange={this.handleInputChange.bind(this)} className="form-control" />
                                 </div>
                             </form>
                         </div>
                         <div className="modal-footer">
                             <button className="btn btn-secondary" data-dismiss="modal">Zatvori</button>
-                            <button className="btn btn-success" data-dismiss="modal">Sacuvaj</button>
+                            <button className="btn btn-success" onClick={this.sacuvaj.bind(this)}>Sacuvaj</button>
                         </div>
                     </div>
                 </div>
@@ -30,4 +51,8 @@ class DodajKategoriju extends Component {
     }
 }
 
-export default DodajKategoriju;
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({dodajKategoriju}, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(DodajKategoriju);
