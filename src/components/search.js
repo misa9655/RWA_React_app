@@ -10,7 +10,7 @@ class Search extends Component {
                             <div className="input-group">
                                 <input type="text" className="form-control" placeholder='Search' />
                                 <span className="input-group-btn">
-                                    <button className="btn btn-primary">Search</button>
+                                    <button className={`btn ${this.props.color}`}>Search</button>
                                 </span>
                             </div>
                         </div>
