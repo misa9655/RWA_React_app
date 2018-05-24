@@ -5,6 +5,8 @@ import Navbar from './navbar'
 import Footer from './footer'
 import Home from './home'
 import Kategorije from './kategorije'
+import Postovi from './postovi'
+import Korisnici from './korisnici'
 
 
 class App extends Component {
@@ -16,6 +18,9 @@ class App extends Component {
                     <Navbar />
                     <Route exact path='/' component={Home}></Route>
                     <Route exact path='/category' component={Kategorije}></Route>
+                    <Route exact path='/posts' component={Postovi}></Route>
+                    <Route exact path='/users' component={Korisnici}></Route>
+
                     <Footer />
                 </div>
             </BrowserRouter>

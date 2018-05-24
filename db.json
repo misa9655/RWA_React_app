@@ -1,3 +1,50 @@
 {
-
+    "users": [
+        {
+            "id": 1,
+            "ime": "Neko Ime",
+            "email": "primermail@gmail.com",
+            "kategorije": ["Web programiranje", "Sport"],
+            "postovi": [
+                {
+                    "naslov": "Text",
+                    "kategorija": "Neka kategorija",
+                    "datum": "11.02.2018."
+                },
+                {
+                    "naslov": "Text",
+                    "kategorija": "Neka kategorija",
+                    "datum": "11.02.2018."
+                },
+                {
+                    "naslov": "Text",
+                    "kategorija": "Neka kategorija",
+                    "datum": "11.02.2018."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "ime": "Neko Drugo_ime",
+            "email": "primermail@gmail.com",
+            "kategorije": ["Web programiranje", "Sport"],
+            "postovi": [
+                {
+                    "naslov": "Text",
+                    "kategorija": "Neka kategorija",
+                    "datum": "11.02.2018."
+                },
+                {
+                    "naslov": "Text",
+                    "kategorija": "Neka kategorija",
+                    "datum": "11.02.2018."
+                },
+                {
+                    "naslov": "Text",
+                    "kategorija": "Neka kategorija",
+                    "datum": "11.02.2018."
+                }
+            ]
+        }
+    ]
 }
