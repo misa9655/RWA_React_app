@@ -5,10 +5,10 @@ import { ucitajKategorije } from "../../actions";
 
 class ListaKategorija extends Component {
 
-    componentWillMount = () => {
+    componentDidMount = () => {
         this.props.ucitajKategorije();
     }
-    
+
     kategorijeRender(kategorije) {
         if(kategorije) {
             return kategorije.map((kategorija, index) => {

@@ -13,7 +13,7 @@ class Navbar extends Component {
                     <div className="collapse navbar-collapse" id='navbar'>
                         <ul className="navbar-nav">
                             <li className="nav-item px-2">
-                                <Link className='nav-link' to='/'>Kontrolna tabla</Link>
+                                <Link className='nav-link' to='/panel'>Kontrolna tabla</Link>
                             </li>
                             <li className="nav-item px-2">
                                 <Link className='nav-link' to='/posts'>Postovi</Link>

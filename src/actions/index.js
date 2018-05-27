@@ -19,7 +19,7 @@ export function ucitajKategorije() {
     return function(dispatch) {
         axios.get(URL)
             .then((response) => {
-                console.log(response);
+                // console.log(response);
                 dispatch({type: UCITAJ_KATEGORIJE, payload: response.data.kategorije});
             })
             .catch((err) => {
@@ -37,6 +37,18 @@ export function ucitajPostove() {
             .catch((err) => {
                 console.log(err);
             });
+    }
+}
+
+export function updateKategorije(kategorije) {
+    return function(dispatch) {
+        axios.patch('http://localhost:3004/users/1', {
+            "kategorije": kategorije
+        })
+            .then(response => {
+                console.log(response);
+            })
+            .catch(err => console.log(err));
     }
 }
 

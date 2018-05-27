@@ -16,4 +16,4 @@ class Korisnici extends Component {
     }
 }
 
-export default Korisnici
+export default Korisnici;
