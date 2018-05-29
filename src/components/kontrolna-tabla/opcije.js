@@ -1,38 +1,32 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import DodajPost from './modals/dodajPost'
-import DodajKategoriju from './modals/dodajKategoriju'
-import DodajKorisnika from './modals/dodajKorisnika'
 
 class Opcije extends Component {
     render() {
         return (
             <div>
-                <section id="action" className="py-4 mb-4 bg-light">
+                <section className="py-4 mb-4 bg-light">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-3">
-                                <Link to="#" className="btn btn-primary btn-block" data-toggle="modal" data-target="#dodajPost">
+                                <NavLink to="/new" className="btn btn-primary btn-block">
                                     <i className="fa fa-plus"></i> Novi post
-                                </Link>
+                                </NavLink>
                             </div>
                             <div className="col-md-3">
-                                <Link to="#" className="btn btn-success btn-block" data-toggle="modal" data-target="#dodajKategoriju">
+                                <NavLink to="/newCategory" className="btn btn-success btn-block">
                                     <i className="fa fa-plus"></i> Dodaj kategoriju
-                                </Link>
+                                </NavLink>
                             </div>
                             <div className="col-md-3">
-                                <Link to="#" className="btn btn-warning btn-block text-white" data-toggle="modal" data-target="#dodajAdmina">
+                                <NavLink to="/newUser" className="btn btn-warning btn-block text-white">
                                     <i className="fa fa-plus"></i> Dodaj korisnika
-                                </Link>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
                 </section>
-                <DodajPost />
-                <DodajKategoriju />
-                <DodajKorisnika />
 
             </div>
         )

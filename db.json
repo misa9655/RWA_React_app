@@ -1,56 +1,60 @@
 {
-  "users": [
+  "posts": [
     {
-      "id": 1,
-      "ime": "Neko Drugo_ime",
-      "email": "primermail@gmail.com",
-      "kategorije": [
-        "Nova kategorija",
-        "Web"
-      ],
-      "postovi": [
-        {
-          "naslov": "Text",
-          "kategorija": "Neka kategorija",
-          "datum": "11.02.2018."
-        },
-        {
-          "naslov": "Text",
-          "kategorija": "Neka kategorija",
-          "datum": "11.02.2018."
-        },
-        {
-          "naslov": "Text",
-          "kategorija": "Neka kategorija",
-          "datum": "11.02.2018."
-        }
-      ]
+      "userId": 1,
+      "date": "23.02.2018.",
+      "title": "Zanimljive tajne koje krije voda",
+      "category": "Zanimljivosti",
+      "body": "Voda je jedan od najznačajnijih elemenata u prirodi bez kog ništa ne bi moglo da funkcioniše. Iako je deo svega dosta toga o njoj ni ne znamo. Ovo su neke od najzanimlijvijih činjenica o vodi: Kada čovek oseti da je žedan - izgubio je oko 1 odsto ukupne količine vode koja se nalazi u organizmu i koja mu je potrebna za funkcionisanje. Bez vode ljudi mogu izdržati oko nedelju dana, dok bi bez hrane mogli da živimo i mesec dana ili više. Voda kruži kroz prirodu u okviru zatvorenog sistema zbog čega retko dolazi do gubitka ovog elementa. Ista voda koja je postojala i pre milion godina na Zemlji – postoji i danas! Prosečna dnevna potrošnja vode po stanovniku u Evropi iznosi 150 litara, dok je za Srbiju duplo veća - čak 300 litara. Oko 70 odsto našeg tela čini voda, dok je na rođenju ovaj procenat veći – pa je novorođena beba 80 odsto voda. Preporuka stručnjaka je da se dnevno popije oko dva litra vode, dok zdrava osoba ne može da popije više od 48 čaša vode u toku dana. Moguće je popiti previše vode i ova pojava se naziva opijanje organizma. U ovim slučajevoma dolazi do povećanja krvnog pritiska upravo zbog sadržaja rastvorenog natrijuma u vodu zbog čega dolazi do disbalansa sadržaja vode u mozgu. Oko 70-75 odsto Zemljine površine prekriveno je vodom. Veća količina vode nalazi se pod zemljom, nego na njenoj površini. Tako je samo 3/10 količine vode na Zemlji dostupno ljudima, dok je ostatak pod zemljom – u obliku podzemnih reka i jezera. ",
+      "id": 1
     },
     {
-      "id": 2,
-      "ime": "Neko Drugo_ime",
-      "email": "primermail@gmail.com",
-      "kategorije": [
-        "Web programiranje",
-        "Sport"
-      ],
-      "postovi": [
-        {
-          "naslov": "Text",
-          "kategorija": "Neka kategorija",
-          "datum": "11.02.2018."
-        },
-        {
-          "naslov": "Text",
-          "kategorija": "Neka kategorija",
-          "datum": "11.02.2018."
-        },
-        {
-          "naslov": "Text",
-          "kategorija": "Neka kategorija",
-          "datum": "11.02.2018."
-        }
-      ]
+      "userId": 1,
+      "date": "19.04.2018.",
+      "title": "Najbizarniji ratovi u istoriji covecanstva",
+      "category": "Zanimljivosti",
+      "body": "Ratovi kao događaj na istorijskoj pozornici su veoma česti, i čovečanstvu u svakom slučaju nepotrebni. Tako su kroz istoriju, vođeni mnogi ratovi iz razno-raznih povoda. Neki od ratova su takođe vođeni zbog besmislenih razloga tj. bili su veoma bizarni... Mi vam u nastavku teksta donosimo listu 10 najbizarnijih ratova u istoriji čovečanstva: 1. Lijar protiv Francuske  Godine 1883. građane Lijara, malog sela u južnoj Španiji razbesneli su izveštaji da je tokom poseta Parizu rulja vređala, pa čak i napala, španskog kralja Alfonsa XII. Gradonačelnik Don Migel Garsija Saez i svih 300 stanovnika Lijara objavili su 14. oktobra 1883. rat Francuskoj. Iako nije ispaljen ni jedan metak, niti je pala ijedna žrtva, gradonačelnik Saez je za sopstvenu upotrebu proglasio Teror planina. Pune 93 godine kasnije, 1976., španski kralj Huan Karlos posetio je Pariz i tamo bio primljen s velikim poštovanjem. Zato je 1881. godine Gradsko veće Lijara donelo odluku da se zbog odličnih odnosa sa Francuskom prekinu neprijateljstva i razmena vatre s Francuzima. Trajanje rata: 93 godine (1883. do 1981.) Broj žrtava: Ni jedna 2. Rat za kantu od hrastovine Ovaj rat je započet 1325. godine, kad je rivalstvo između slobodnih gradova Modene i Bolonje izmaklo kontroli zbog – jedne drvene kante! Problemi su počeli kad je grupa vojnika iz Modene upala u Bolonju i ukrala veliku drvenu kantu. Prepad je bio uspešan, ali je Bolonja, želeći da spasi kantu i čast, objavila rat Modeni. Rat je besneo 12 godine, ali Bolonja nikad nije uspela da vrati svoju kantu. Kanta je i danas smeštena u zvoniku u Modeni. Trajanje rata: 12 godina (1325. do 1337.) Broj žrtava: Nepoznat 3. Paragvajski rat Predsednik Paragvaja Francisko Solano Lopez bio je veliki obožavalac Napoleona Bonaparte. Smtrao je sebe velikim taktičarom i sjajnim zapovednikom, ali nedostajala mu je jedna stvar – rat. Kako bi rešio taj problem objavio je rat trima susednim državama: Argentini, Brazilu i Urugvaju. Ishod rata? Paragvaj je bio brlo blizu potpunom uništenju. Procenjuje se da je 90 posto stanovništva umrlo od gladi, bolesti li u borbama sa neprijateljskim vojskama. Bio je to jedan od najnepotrebnijih ratova u istoriji, jer Lopez nije imao baš nikakav razlog za objavu rata moćnim susedima. Trajanje rata: 6 godina (1864. do 1870.) Broj žrtava: 400.000 među sukobljenim stranama 4. Rat zbog zalutalog psa Te 1925. godine Grčka i Bugarska nisu bile u prijateljskim odnosima. Borile su se jedna protiv druge u Prvom svetskom ratu i te rane još nisu bile zaceljene. Napetosti uzduž granica su bile stalne, posebno u oblasti Petrih. Napetost je dosegla tačku ključanja 22. oktobra 1925., kad je jedan grčki vojnik loveći svog psa prešao bugarsku granicu, pa ga je ustrelio bugarski stražar. Grčka je najavila odmazdu i već sledećeg dana okupirala Petrih. Brzo je očistila to područje od bugarskih vojnika, ali je zaustavila Liga naroda koja je kaznila Grke, naloživši im da napuste Petrih i plate Bugarima odštetu. Grčka je povukla svoje snage deset dana kasnije i isplatila Bugarskoj 45.000 funti. Trajanje rata: Deset dana (23.10. do 2.11. 1925.) Broj žrtava: 52 s obe strane 5. Aroostook rat Aroostook rat je bio vojni sukob između SAD-a i Velike Britanije na granici države Maine. Nakon rata 1812. britanske snage okupirale su istočno područje Mainea i, uprkos tome što tamo više nije bilo njihovih trupa, smatrali to britanskom teritorijom. U zimu 1838. američke drvoseče sekle su drva na tom području i izazvale gnev Britanaca koji su odmah tamo poslali vojsku. I Amerikanci su poslali vojsku, pa se činilo da je rat neizbežan. Ipak, logistika je s obe strane malo zakazala, pa su tako Amerikanci greškom dobili enormne količine svinjetine i graška zbog čega je ovaj sukob dobio i nadimak Rat svinjetine i graška. Skoro godinu dana su se britanske i američke trupe međusobno vrebale, a onda su dve vlade postigle sporazum. Britanci su pristali da vrate Amerikancima istočni deo Mainea, a američka vojska se zauzvrat povukla. U ovom ratu nije bilo vojnih akcija, ali stotine vojnika su umrle od bolesti ili usled slučajnog ranjavanja. Trajanje rata: 11 meseci (1838. do 1839.) Broj žrtava: 550 s obe strane 6. Svinjski rat Sledeći britansko-američki sukob, Svinjski rat, započet je kad je jedan britanski pešadinac ubio svinju koja je lutala po američkom tlu. Lokalna američka milicija odgovorila je okupivši se na granici i čekajući dalje britanske poteze. Britanci su se konačno izvinili i taj kratki rat je završen, a svinja s početka priče je ostala jedina žrtva. Trajanje rata: 4 meseca (1859.) Broj žrtava: jedna svinja 7. 335 godina dug rat Ovaj rat se vodio između Holandije i ostrva Skili smeštenog blizu jugozapadne obale Velike Britanije. Rat je počeo 1651. i kao mnogi ratovi tog vremena nije shvaćen ozbiljno i ubrzo je zaboravljeno zbog čega se uopšte vodio. Tri veka su prošla pre nego što su dve zemlje odlučile da sklope mir i okončaju jedan od najdužih ratova u istoriji. Trajanje rata: 335 godina (1651. do 1986.) Broj žrtava: ni jedna 8. Fudbalski rat Neki ratovi započnu iznenadnim napadom, neki pokoljem, a ovaj je počeo fudbalskom utakmicom između Salvadora i Hondurasa 1969. godine. Salvador je izgubio tu utakmicu i napetosti su rasle sve dok 14. juna salvadorska vojska nije izvela napad na Honduras. Iznenađena ovim neočekivanim nasiljem Organizacija američkih država naložila je prekid vatre i sukob je prekinut 20. juna, svega stotinu sati nakon što je ispaljen prvi hitac. Trajanje rata: 4 dana (14. do 20.6. 1969.) Broj žrtava: 3.000 na obe strane 9. Moldavsko-transdniestrijski rat Rat je započeo ubrzo nakon raspada Sovjetskog Saveza kad je bivšu sovjetsku državu Moldaviju zahvatila kriza. Dve trećine stanovništva želelo je približavanje Rumuniji, dok je preostala trećina želela da ostane bliska Rusiji. Zbog toga je izbio rat. Ono što ovaj rat čini čudnim je to što su se ljudi koji su danju međusobno ratovali po noći okupljali na ničijoj zemlji, družili se i zajedno pili. Vojnici su čak sklopili sporazum da ne pucaju jedni u druge ako se susretnu na bojištu sledećeg dana. Jedan je vojnik napisao u svom dnevniku: Ovaj rat je poput groteskne zabave, tokom dana ubijamo naše neprijatelje, a po noći pijemo s njima. Kako je rat bizarna stvar! Trajanje rata: 4 meseca (2.3. do 21.6. 1992.) Broj žrtava: 1.300 mrtvih na obe strane 10. Rat emua Ovo je jedini službeni rat u kojem jedna od zaraćenih strana nisu bili ljudi već – ptice. Te 1932. godine rast populacije emua u Australiji izmakao je kontroli i oko 20.000 emua jurcalo je austrilaskom pustinjom i poljima, uništavajući poljoprivredne nasade. Australija je poslala posebne vojne grupe da pobiju emue, čak im u šali objavivši rat. Vojnici su ušli u pustinju s namerom da ubiju sve emue koje vide, ali suočili su se sa jednim problemom: emui su se pokazali vrlo otpornim i nastavili su da beže čak i kad bi bili pogođeni sa više metaka, lako pretrčavši vojnike natovarene opremom. Rat emua potrajao je skoro nedelju dana pre nego što je major Meredit odustao zgrožen time kako su vojnici skupljali i pakovali delove njima neuhvatljivih ptica. Trajanje rata: 7 dana (11. do 18.11. 1932.) Broj žrtava: 2.500 emua",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "date": "02.3.2018.",
+      "title": "Zanimljive cinjenice o Maroku",
+      "category": "Zanimljivosti",
+      "body": "Pročitajte pregršt zanimljivosti i zanimljivih činjenica o Maroku. Jedna od reči koje se koriste za novac je: vusakh d-dunja, što u bukvalnom prevodu znači prljavština sveta. Ove zanimljivosti i zanimljive činjenice o predivnoj zemlji Maroko, možda do sada niste znali. 1. Maroko je od Evrope udaljen samo 13 kilometara. 2. Jedan marokanski imperator imao harem od 500 žena i rekorder je u broju dece. Imao ih je čak 1.042. 3. Puno arapsko ime Maroka se može prevesti kao Zapadno Kraljevstvo.4. Boja žalosti je bela, tako da udovice nose belo 40 dana nakon smrti supruga.5. Glаvni grаd Mаrokа je Rаbbаt, dok je njenа vаlutа Mаrokаnski dirhаm.6. Ovde se smatra nepristojnim uzimanje hrane levom rukom, kao i odbijanje mesa ukoliko je ono ponuđeno.7. Kаzаblаnkа je nаjveći grаd u Mаroku, kаo i glаvnа lukа. Smаtrа se ekonomskom prestonicom Mаrokа.8. Jedna od reči koje se koriste za novac je vusakh d-dunja, što u bukvalnom prevodu znači prljavština sveta.9. Nаjbolje mesto zа kupovinu zа suvenire u Mаroku je u Mаrаkešu.10. Najveći svetski izvoznik sardina je upravo ova zemlja.11. Mаroko je dobio nezаvisnost od Frаncuske 1956.12. Džamija Hasana II u Kazablanki je sedma najveća džamija na svetu. Tokom pet godina, koliko je izgradnja trajala, gradilo ju je više od 30.000 ljudi.13. Zvаnični jezik Mаrokа je аrаpski. Međutim, berberski (još jedаn dijаlekt) i frаncuski su tаkođe široko rasprostranjeni.14. Jetra, a ne srce, smatra se simbolom ljubavi u Maroku.15. Arаpi i Berberi čine većinu stаnovništvа Mаroka, ima Jevrejа i drugih naroda.16. Maroko ima samo jednog registrovanog stomatologa na 8.000 stanovnika, a najčešće lečenje je vađenje zuba, koje se bez problema može obaviti i na crno.17. U Fesu je 859. Godine osnovan Univerzitet Al Karaouine (prema Ginisovoj knjizi rekorda najstariji danas postojeći univerzitet na svetu).18. Maroko je jedina afrička zemlja koja nije članica Afričke unije.19. Glаvni resursi Mаrokаnski privrede su ugаlj, poljoprivreda i eksploatacija fosforа.20. Najpopularniji sport je fudbal, a reprezentacija nosi nadimak Lavovi Atlasa.21. Mаrokаnska kuhinjа je mešаvinа evropske i аfričke kuhinje, zbog svoje lokаcije između Evrope i Afrike.22. U Marakešu, koji se često naziva i Crvenim Gradom, zaštita od sunca je stalno potrebna, čak i zimi.23. Mаroko je 12. nаjbogаtijа zemljа u Africi.24. Nacionalno jelo zove se seksou, tako da, ako vas neko pita da li ste za, ne morate da se ustručavate.25. Većinа Mаrokаnаcа jedu hranu nаprаvljenu od pšenice i ječmа.",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "name": "Milos",
+      "id": 1
+    },
+    {
+      "name": "Neko",
+      "id": 2
+    }
+  ],
+  "category": [
+    {
+      "name": "Zanimljivosti",
+      "id": 1
+    },
+    {
+      "name": "Sport",
+      "id": 2
+    },
+    {
+      "name": "IT",
+      "id": 3
+    },
+    {
+      "name": "Filmovi",
+      "id": 4
+    },
+    {
+      "name": "Nova",
+      "id": 5
     }
   ]
 }

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
 import reduxThunk from 'redux-thunk'
+import { BrowserRouter } from 'react-router-dom'
 
 
 import App from './components/app'
@@ -13,7 +14,9 @@ const createStoreWithMiddleware = applyMiddleware(logger, reduxThunk)(createStor
 
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </Provider>
     , document.getElementById('root')
 );

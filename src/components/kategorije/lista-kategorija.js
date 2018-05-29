@@ -54,7 +54,7 @@ class ListaKategorija extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        kategorije: state.post.kategorije
+        kategorije: state.posts
     }
 }
 
