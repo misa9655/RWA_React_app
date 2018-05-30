@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 
 
@@ -20,8 +20,7 @@ class App extends Component {
                 <div>
                     <Navbar />
                     <Route exact path='/' component={Home}></Route>
-                    
-                    <Route exact path='/panel' component={KontrolnaTabla}></Route>
+                    <Route path='/panel' component={KontrolnaTabla} ></Route>
                     {/* <Route exact path='/category' component={Kategorije}></Route> */}
                     {/* <Route exact path='/posts' component={Postovi}></Route> */}
                     {/* <Route exact path='/users' component={Korisnici}></Route> */}

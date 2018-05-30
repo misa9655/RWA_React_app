@@ -1,6 +1,10 @@
+
 import React, { Component } from 'react'
 
 import { Field, reduxForm } from 'redux-form'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { dodajKorisnika } from '../../../actions'
 
 class DodajKorisnika extends Component {
 
@@ -9,12 +13,17 @@ class DodajKorisnika extends Component {
             <div className="form-group">
                 <label>{field.myLabel}</label>
                 <input 
-                    {...field}
+                    {...field.input}
                     type={field.myType} 
                     className="form-control"
                 />
             </div>
         )
+    }
+
+    onSubmit(values) {
+        console.log(values);
+        this.props.dodajKorisnika(values);
     }
 
     render() {
@@ -27,7 +36,7 @@ class DodajKorisnika extends Component {
                                 <h5>Dodaj kategoriju</h5>
                             </div>
                             <div className="card-body">
-                                <form>
+                                <form onSubmit={this.props.handleSubmit(event => this.onSubmit(event))}>
                                     <Field
                                         name='username'
                                         myLabel='Username'
@@ -52,6 +61,7 @@ class DodajKorisnika extends Component {
                                         myType='password'
                                         component={this.renderInputField}
                                     />
+                                    <button className='btn btn-warning'>Dodaj</button>
                                 </form>
                             </div>
                         </div>
@@ -62,6 +72,10 @@ class DodajKorisnika extends Component {
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({dodajKorisnika}, dispatch)
+}
+
 export default reduxForm({
     form: 'User'
-})(DodajKorisnika);
+})(connect(null, mapDispatchToProps)(DodajKorisnika));

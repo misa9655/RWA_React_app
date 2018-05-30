@@ -1,6 +1,39 @@
 import axios from "axios";
-import { UCITAJ_KATEGORIJE, UCITAJ_POSTOVE, UCITAJ_KORISNIKE } from "./types";
+import { UCITAJ_KATEGORIJE, UCITAJ_POSTOVE, UCITAJ_KORISNIKE, LOG_IN, NOT_LOG_IN } from "./types";
 
+
+export function logIn({email, password}) {
+    return function(dispatch) {
+        axios.get(`http://localhost:3004/users?email=${email}&&password=${password}`)
+            .then(response => {
+                if(response.data)
+                {
+                    dispatch({
+                        type: LOG_IN,
+                        payload: {
+                            email,
+                            username: response.data[0].username,
+                            id: response.data[0].id
+                        }
+                    });
+
+                }
+                else {
+                    dispatch({type: NOT_LOG_IN})
+                }
+            });
+    }
+}
+
+export function dodajKorisnika({username, email, password}) {
+    return function(dispatch) {
+        axios.post('http://localhost:3004/users', {
+            username,
+            email,
+            password
+        })
+    }
+}
 
 export function dodajPost({naslov, kategorija, body}) {
     return function(dispatch) {

@@ -16,12 +16,10 @@ class KontrolnaTabla extends Component {
                 
                         <Header color='bg-primary' text='Kontrolna tabla' icon='fa fa-cog' />
                         <Opcije />
-                        <Route exact path='/panel' component={ListaPostova}></Route>
-                        <Route exact path='/new' component={DodajPost}></Route>
-                        <Route exact path='/newCategory' component={DodajKategoriju}></Route>
-                        <Route exact path='/newUser' component={DodajKorisnika}></Route>  
-
-                  
+                        <Route exact path={this.props.match.path} component={ListaPostova}></Route>
+                        <Route exact path={`${this.props.match.path}/newPost`} component={DodajPost}></Route>
+                        <Route exact path={`${this.props.match.path}/newCategory`} component={DodajKategoriju}></Route>
+                        <Route exact path={`${this.props.match.path}/newUser`} component={DodajKorisnika}></Route>  
             </div>
                     
 

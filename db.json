@@ -27,12 +27,16 @@
   ],
   "users": [
     {
-      "name": "Milos",
       "id": 1
     },
     {
-      "name": "Neko",
       "id": 2
+    },
+    {
+      "username": "kakarot",
+      "email": "milosmilutinovic@elfak.rs",
+      "password": "misa",
+      "id": 3
     }
   ],
   "category": [
