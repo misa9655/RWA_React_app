@@ -61,7 +61,7 @@ class DodajPost extends Component {
 
     onSubmit(values){
         console.log(values);
-        this.props.dodajPost(values);
+        this.props.dodajPost(values, this.props.userId);
     }
 
     
@@ -117,7 +117,8 @@ class DodajPost extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        kategorije: state.posts.kategorije
+        kategorije: state.app.kategorije,
+        userId: state.app.user.id
     }
 }
 

@@ -38,6 +38,7 @@ class DodajKategoriju extends Component {
                                         <label>Naslov</label>
                                         <input type="text" value={this.state.kategorija} onChange={this.handleInputChange.bind(this)} className="form-control" />
                                     </div>
+                                    
                                 </form>
                             </div>
                             <div className="card-footer">
@@ -53,11 +54,6 @@ class DodajKategoriju extends Component {
 
 
 
-// const mapStateToProps = (state) => {
-//     return {
-//         kategorije: state.posts.kategorije
-//     }
-// }
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({updateKategorije}, dispatch);

@@ -10,7 +10,7 @@ const initialState = {
 export default (state = initialState, action) => {
     switch(action.type) {
         case LOG_IN:
-            return {...state, user: action.payload}
+            return {...state, user: action.payload, isUser: true}
         case UCITAJ_POSTOVE:
             return {...state, postovi: [...action.payload]}
         case UCITAJ_KATEGORIJE:

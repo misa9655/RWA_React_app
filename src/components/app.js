@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom'
 import Navbar from './navbar'
 import Footer from './footer'
 import Home from './home'
+import EditPost from './edit-post'
 // import Kategorije from './kategorije'
 // import Postovi from './postovi'
 // import Korisnici from './korisnici'
@@ -21,6 +22,7 @@ class App extends Component {
                     <Navbar />
                     <Route exact path='/' component={Home}></Route>
                     <Route path='/panel' component={KontrolnaTabla} ></Route>
+                    <Route path='/editPost/:id' component={EditPost} ></Route>
                     {/* <Route exact path='/category' component={Kategorije}></Route> */}
                     {/* <Route exact path='/posts' component={Postovi}></Route> */}
                     {/* <Route exact path='/users' component={Korisnici}></Route> */}

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom'
 
 import { logIn } from '../actions'
 
@@ -10,7 +11,7 @@ class LogIn extends Component {
 
     renderInputField(field) {
         return (
-            <div className="form-group">
+            <div className="form-group mt-3">
                 <label>{field.myLabel}</label>
                 <input
                     {...field.input}
@@ -22,6 +23,8 @@ class LogIn extends Component {
     }
 
     onSubmit(values) {
+        console.log(this.prpos);
+        
         this.props.logIn(values);
     }
 
@@ -49,7 +52,8 @@ class LogIn extends Component {
                                             myType='password'
                                             component={this.renderInputField}
                                         />
-                                        <button className='btn btn-primary btn-block'>Prijavi se</button>
+                                        
+                                        <button className='btn btn-primary btn-block mt-3'>Prijavi se</button>
                                     </form>
                                 </div>
                             </div>

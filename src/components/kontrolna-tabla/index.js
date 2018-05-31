@@ -7,19 +7,19 @@ import ListaPostova from './lista-postova'
 import DodajPost from './forms/dodajPost'
 import DodajKategoriju from './forms/dodajKategoriju'
 import DodajKorisnika from './forms/dodajKorisnika'
+import EditPost from '../edit-post'
 
 class KontrolnaTabla extends Component {
 
     render() {
         return (
             <div>
-                
                         <Header color='bg-primary' text='Kontrolna tabla' icon='fa fa-cog' />
                         <Opcije />
                         <Route exact path={this.props.match.path} component={ListaPostova}></Route>
                         <Route exact path={`${this.props.match.path}/newPost`} component={DodajPost}></Route>
                         <Route exact path={`${this.props.match.path}/newCategory`} component={DodajKategoriju}></Route>
-                        <Route exact path={`${this.props.match.path}/newUser`} component={DodajKorisnika}></Route>  
+                        <Route exact path={`${this.props.match.path}/newUser`} component={DodajKorisnika}></Route>
             </div>
                     
 

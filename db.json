@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "userId": 1,
+      "userId": 3,
       "date": "23.02.2018.",
       "title": "Zanimljive tajne koje krije voda",
       "category": "Zanimljivosti",
@@ -17,7 +17,7 @@
       "id": 2
     },
     {
-      "userId": 2,
+      "userId": 3,
       "date": "02.3.2018.",
       "title": "Zanimljive cinjenice o Maroku",
       "category": "Zanimljivosti",

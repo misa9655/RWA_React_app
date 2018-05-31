@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 
 
 import { ucitajPostove } from '../../actions'
@@ -10,7 +11,7 @@ import { ucitajPostove } from '../../actions'
 class ListaPostova extends Component {
 
     componentDidMount = () => {
-      this.props.ucitajPostove();
+        this.props.ucitajPostove(this.props.userId);
     }
     
 
@@ -24,7 +25,11 @@ class ListaPostova extends Component {
                         <td>{post.title}</td>
                         <td>{post.category}</td>
                         <td>{post.date}</td>
-                        <td><button className='btn btn-secondary'>Detalji</button></td>
+                        <td>
+                            <Link to={`/editPost/${index}`} className='btn btn-secondary'>
+                                Detalji
+                            </Link>
+                        </td>
                     </tr>
                 )
             })
@@ -68,7 +73,8 @@ class ListaPostova extends Component {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-        posts: state.posts.postovi
+        posts: state.app.postovi,
+        userId: state.app.user.id
     }
 }
 

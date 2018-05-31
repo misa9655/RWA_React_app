@@ -6,7 +6,7 @@ export function logIn({email, password}) {
     return function(dispatch) {
         axios.get(`http://localhost:3004/users?email=${email}&&password=${password}`)
             .then(response => {
-                if(response.data)
+                if(response.data.length > 0)
                 {
                     dispatch({
                         type: LOG_IN,
@@ -35,14 +35,15 @@ export function dodajKorisnika({username, email, password}) {
     }
 }
 
-export function dodajPost({naslov, kategorija, body}) {
+export function dodajPost({naslov, kategorija, body}, userId) {
     return function(dispatch) {
         const date = new Date(Date.now());
         axios.post('http://localhost:3004/posts', {
             title:naslov,
             category: kategorija,
             body,
-            date: date.toDateString()
+            date: date.toDateString(),
+            userId
         })
     }
 }
@@ -51,7 +52,10 @@ export function ucitajKorisnike() {
     return function(dispatch) {
         axios.get('http://localhost:3004/users')
             .then((response) => {
-                dispatch({type: UCITAJ_KORISNIKE, payload: response.data});
+                const users = response.data.map((user) => {
+                    return {username: user.username, email: user.email, id: user.id}
+                });
+                dispatch({type: UCITAJ_KORISNIKE, payload: users});
             })
             .catch((err) => {
                 console.log(err);
@@ -63,7 +67,7 @@ export function ucitajKategorije() {
     return function(dispatch) {
         axios.get('http://localhost:3004/category')
             .then((response) => {
-                // console.log(response);
+                
                 dispatch({type: UCITAJ_KATEGORIJE, payload: response.data});
             })
             .catch((err) => {
@@ -72,9 +76,9 @@ export function ucitajKategorije() {
     }
 }
 
-export function ucitajPostove() {
+export function ucitajPostove(id) {
     return function(dispatch) {
-        axios.get('http://localhost:3004/users/1/posts')
+        axios.get(`http://localhost:3004/users/${id}/posts`)
             .then((response) => {
                 console.log(response);
                 dispatch({type: UCITAJ_POSTOVE, payload: response.data})
