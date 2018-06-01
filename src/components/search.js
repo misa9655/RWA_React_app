@@ -1,24 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Search extends Component {
-    render() {
-        return (
-            <section id="action" className="py-4 mb-4 bg-light">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-6 ml-auto">
-                            <div className="input-group">
-                                <input type="text" className="form-control" placeholder='Search' />
-                                <span className="input-group-btn">
-                                    <button className={`btn ${this.props.color}`}>Search</button>
-                                </span>
-                            </div>
+const Search = (props) => {
+
+    return (
+        <section className="py-4 mb-4 bg-light">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 ml-auto">
+                        <div className="input-group">
+                            <input type="text" className="form-control" placeholder='Search' />
+                            <span className="input-group-btn">
+                                <button className={`btn ${props.color}`}>Search</button>
+                            </span>
                         </div>
                     </div>
                 </div>
-            </section>
-        )
-    }
+            </div>
+        </section>
+    )
+
 }
 
 export default Search;

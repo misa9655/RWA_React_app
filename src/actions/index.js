@@ -1,6 +1,10 @@
 import axios from "axios";
-import { UCITAJ_KATEGORIJE, UCITAJ_POSTOVE, UCITAJ_KORISNIKE, LOG_IN, NOT_LOG_IN } from "./types";
+import { UCITAJ_KATEGORIJE, UCITAJ_POSTOVE, UCITAJ_KORISNIKE, LOG_IN, NEW_POST, EDIT_POST, DODAJ_KATEGORIJU, LOG_OUT } from "./types";
 
+
+export function logout() {
+    return {type: LOG_OUT}
+}
 
 export function logIn({email, password}) {
     return function(dispatch) {
@@ -18,24 +22,11 @@ export function logIn({email, password}) {
                     });
 
                 }
-                else {
-                    dispatch({type: NOT_LOG_IN})
-                }
             });
     }
 }
 
-export function dodajKorisnika({username, email, password}) {
-    return function(dispatch) {
-        axios.post('http://localhost:3004/users', {
-            username,
-            email,
-            password
-        })
-    }
-}
-
-export function dodajPost({naslov, kategorija, body}, userId) {
+export function dodajPost({naslov, kategorija, body}, userId, cb) {
     return function(dispatch) {
         const date = new Date(Date.now());
         axios.post('http://localhost:3004/posts', {
@@ -45,6 +36,41 @@ export function dodajPost({naslov, kategorija, body}, userId) {
             date: date.toDateString(),
             userId
         })
+            .then(response => {
+                dispatch({type:NEW_POST, payload: response.data})
+                cb();
+            })
+            .catch(err => {
+                console.log(err);
+            })
+            
+    }
+}
+
+export function obrisiPost(id, cb) {
+    
+    axios.delete(`http://localhost:3004/posts/${id}`)
+        .then(response => {
+            cb();
+        })
+}
+
+export function editPost({title, category, body}, id, userId, cb) {
+    return function(dispatch) {
+        const date = new Date(Date.now());
+        axios.put(`http://localhost:3004/posts/${id}`, {
+            title,
+            id,
+            category,
+            body,
+            date: date.toDateString(),
+            userId
+        })
+            .then((response) => {
+                dispatch({type: EDIT_POST, payload: response.data});
+                cb();
+            })
+            .catch(err => console.log(err));
     }
 }
 
@@ -63,9 +89,9 @@ export function ucitajKorisnike() {
     }
 }
 
-export function ucitajKategorije() {
+export function ucitajKategorije(id) {
     return function(dispatch) {
-        axios.get('http://localhost:3004/category')
+        axios.get(`http://localhost:3004/users/${id}/categories`)
             .then((response) => {
                 
                 dispatch({type: UCITAJ_KATEGORIJE, payload: response.data});
@@ -80,7 +106,6 @@ export function ucitajPostove(id) {
     return function(dispatch) {
         axios.get(`http://localhost:3004/users/${id}/posts`)
             .then((response) => {
-                console.log(response);
                 dispatch({type: UCITAJ_POSTOVE, payload: response.data})
             })
             .catch((err) => {
@@ -89,13 +114,15 @@ export function ucitajPostove(id) {
     }
 }
 
-export function updateKategorije(name) {
+export function dodajKategoriju({name, userId}, cb) {
     return function(dispatch) {
-        axios.post('http://localhost:3004/category', {
-            name
+        axios.post('http://localhost:3004/categories', {
+            name,
+            userId
         })
             .then(response => {
-                console.log(response);
+                dispatch({type: DODAJ_KATEGORIJU, payload: response.data})
+                cb();
             })
             .catch(err => console.log(err));
     }

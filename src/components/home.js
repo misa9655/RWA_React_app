@@ -8,7 +8,7 @@ import KontrolnaTabla from './kontrolna-tabla'
 
 class Home extends Component {
     renderHome() {
-        if(this.props.isUser) {
+        if(this.props.is_logged) {
             return (
                 <Route path={this.props.match.path} component={KontrolnaTabla}></Route>
             );
@@ -33,7 +33,7 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        isUser: state.app.isUser
+        is_logged: state.app.is_logged
     }
 }
 

@@ -1,67 +1,54 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Field, reduxForm } from 'redux-form'
 
-import { ucitajKategorije, dodajPost } from '../../../actions'
+import { dodajPost } from '../../../actions'
 
 class DodajPost extends Component {
-
-    componentDidMount = () => {
-        this.props.ucitajKategorije();
-    }
-    
-
-    renderInputField(field) {
-        return (
-            <div className="form-group">
-                <label>{field.myLabel}</label>
-                <input
-                    {...field.input} 
-                    type={field.myType} 
-                    className="form-control" 
-                />
-            </div>
-        );
-    }   
-    renderTextareaField(field) {
-        console.log(field);
-        return (
-            <div className="form-group">
-                <label>{field.myLabel}</label>
-                <textarea 
-                    className="form-control" 
-                    {...field.input}
-                >
-                </textarea>
-            </div>
-        );
-    } 
-    
-    renderSelectField(field) {
-        
-        const renderOptions = (kategorije) =>{
-            if(field.opcije){
-                return kategorije.map((kategorija, index) => {
-                    return (
-                        <option key={index} value={kategorija.name}>{kategorija.name}</option>
-                    )
-                });
-            }
+    constructor(props) {
+        super(props);
+        this.state = {
+            naslov: '',
+            kategorija: '',
+            body: ''
         }
-        return (
-            <div className="from-group">
-                <label>{field.myLabel}</label>
-                <select {...field.input} className='form-control'>
-                    {renderOptions(field.opcije)}
-                </select>
-            </div>
-        )
     }
 
-    onSubmit(values){
-        console.log(values);
-        this.props.dodajPost(values, this.props.userId);
+    handleTitleChange({target}) {
+        this.setState({
+            naslov: target.value
+        })
+    }
+
+    handleCategoryChange({target}) {
+        this.setState({
+            kategorija: target.value
+        })
+    }
+
+    handleBodyChange({target}) {
+        this.setState({
+            body: target.value
+        })
+    }
+
+    renderOptions(kategorije){
+        if(kategorije){
+            return kategorije.map((kategorija, index) => {
+                return (
+                    <option key={index} value={kategorija.name}>{kategorija.name}</option>
+                )
+            });
+        }
+    }
+
+    onSubmit(e){
+        e.preventDefault();
+        this.props.dodajPost({
+            naslov: this.state.naslov,
+            kategorija: this.state.kategorija,
+            body: this.state.body
+        }, this.props.userId, () => {this.props.history.push('/posts')});
     }
 
     
@@ -76,33 +63,41 @@ class DodajPost extends Component {
                                 <h4>Dodaj post</h4>
                             </div>
                             <div className="card-body">
-                                <form onSubmit={this.props.handleSubmit(event => this.onSubmit(event))}>
-                                    <Field 
-                                        name='naslov'
-                                        myLabel='Naslov'
-                                        myType='text'
-                                        component={this.renderInputField}
-                                    />
+                                <form onSubmit={this.onSubmit.bind(this)}>
 
-                                    <Field  
-                                        name='kategorija'
-                                        myLabel='Kategorija'
-                                        opcije={this.props.kategorije}
-                                        component={this.renderSelectField}
-                                    />
-                                    
-                                    <Field 
-                                        name='body'
-                                        myLabel='Body'
-                                        component={this.renderTextareaField}
-                                    />
-                                
                                     <div className="form-group">
-                                        <label>Postavi sliku</label>
-                                        <input type="file" className="form-control-file" />
-                                        <small className="form-text text-muted">Max Size 3mb</small>
+                                        <label>Naslov</label>
+                                        <input
+                                            type='text'
+                                            className="form-control"
+                                            value={this.state.naslov}
+                                            onChange={this.handleTitleChange.bind(this)}
+                                        />
                                     </div>
-            
+
+                                    <div className="from-group">
+                                        <label>Kategorija</label>
+                                        <select 
+                                            className='form-control' 
+                                            value={this.state.kategorija}
+                                            onChange={this.handleCategoryChange.bind(this)}
+                                        >
+                                            {this.renderOptions(this.props.kategorije)}
+                                        </select>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label>Body</label>
+                                        <textarea
+                                            className="form-control"
+                                            cols="30" 
+                                            rows="10"
+                                            value={this.state.body}
+                                            onChange={this.handleBodyChange.bind(this)}
+                                        >
+                                        </textarea>
+                                    </div>
+
                                     <button className='btn btn-primary'>Sacuvaj</button>
                                 </form>
                             </div>
@@ -123,9 +118,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ucitajKategorije, dodajPost}, dispatch);
+    return bindActionCreators({dodajPost}, dispatch);
 }
 
-export default reduxForm({
-    form: 'Post'
-})(connect(mapStateToProps, mapDispatchToProps)(DodajPost));
+export default connect(mapStateToProps, mapDispatchToProps)(DodajPost);

@@ -1,31 +1,36 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { Field, reduxForm } from 'redux-form'
-import { Link } from 'react-router-dom'
 
 import { logIn } from '../actions'
 
 
 class LogIn extends Component {
-
-    renderInputField(field) {
-        return (
-            <div className="form-group mt-3">
-                <label>{field.myLabel}</label>
-                <input
-                    {...field.input}
-                    type={field.myType}
-                    className='form-control'
-                />
-            </div>
-        )
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: ''
+        }
     }
 
-    onSubmit(values) {
-        console.log(this.prpos);
-        
-        this.props.logIn(values);
+    handleEmailChange({target}) {
+        this.setState({
+            email: target.value
+        })
+    }
+    handlePasswordChange({target}) {
+        this.setState({
+            password: target.value
+        })
+    }
+    
+    onSubmit(e) {
+        e.preventDefault();
+        this.props.logIn({
+            email: this.state.email,
+            password: this.state.password
+        });
     }
 
     render() {
@@ -39,19 +44,25 @@ class LogIn extends Component {
                                     <h4>Account Login</h4>
                                 </div>
                                 <div className="card-body">
-                                    <form onSubmit={this.props.handleSubmit(event => this.onSubmit(event))}>
-                                        <Field
-                                            name='email'
-                                            myLabel='E-mail'
-                                            myType='email'
-                                            component={this.renderInputField}
-                                        />
-                                        <Field
-                                            name='password'
-                                            myLabel='Password'
-                                            myType='password'
-                                            component={this.renderInputField}
-                                        />
+                                    <form onSubmit={this.onSubmit.bind(this)}>
+                                        <div className="form-group mt-3">
+                                            <label>E-mail</label>
+                                            <input
+                                                type='email'
+                                                className='form-control'
+                                                value={this.state.email}
+                                                onChange={this.handleEmailChange.bind(this)}
+                                            />
+                                        </div>
+                                        <div className="form-group mt-3">
+                                            <label>Password</label>
+                                            <input
+                                                type='password'
+                                                className='form-control'
+                                                value={this.state.password}
+                                                onChange={this.handlePasswordChange.bind(this)}
+                                            />
+                                        </div>
                                         
                                         <button className='btn btn-primary btn-block mt-3'>Prijavi se</button>
                                     </form>
@@ -70,7 +81,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default reduxForm({
-    form: 'LogIn'
-})(connect(null, mapDispatchToProps)(LogIn));
+export default connect(null, mapDispatchToProps)(LogIn);
 

@@ -1,25 +1,23 @@
 import React, { Component } from 'react'
-
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { ucitajPostove } from '../../actions'
-
+import { Link } from 'react-router-dom'
 
 class ListaPostova extends Component {
-
-    componentWillMount = () => {
-      this.props.ucitajPostove();
-    }
-
+    
     renderPosts(posts) {
         if(posts) {
             return posts.map((post, index) => {
                 return (
-                    <tr key={index}>
+                    <tr key={post.id}>
                         <td>{index + 1}</td>
-                        <td>{post.naslov}</td>
-                        <td>{post.kategorija}</td>
-                        <td>{post.datum}</td>
+                        <td>{post.title}</td>
+                        <td>{post.category}</td>
+                        <td>{post.date}</td>
+                        <td>
+                            <Link to={`/editPost/${index}`} className='btn btn-secondary'>
+                                Detalji
+                            </Link>
+                        </td>
                     </tr>
                 )
             })
@@ -29,7 +27,7 @@ class ListaPostova extends Component {
 
     render() {
         return (
-            <section id="posts">
+            <section>
                 <div className="container">
                     <div className="row">
                         <div className="col">
@@ -62,12 +60,8 @@ class ListaPostova extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.post.postovi
+        posts: state.app.postovi,
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ucitajPostove}, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ListaPostova);
+export default connect(mapStateToProps, null)(ListaPostova);

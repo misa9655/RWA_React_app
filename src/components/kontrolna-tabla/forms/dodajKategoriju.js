@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { updateKategorije } from '../../../actions'
+import { dodajKategoriju } from '../../../actions'
 
 class DodajKategoriju extends Component {
     constructor(props) {
@@ -19,8 +19,10 @@ class DodajKategoriju extends Component {
     }
     sacuvaj()
     {
-
-        this.props.updateKategorije(this.state.kategorija);
+        this.props.dodajKategoriju({
+            name: this.state.kategorija,
+            userId: this.props.userId
+        }, () => {this.props.history.push('/category')})
     }
 
     render() {
@@ -53,10 +55,14 @@ class DodajKategoriju extends Component {
 }
 
 
-
-
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({updateKategorije}, dispatch);
+const mapStateToProps = (state) => {
+    return {
+        userId: state.app.user.id
+    }
 }
 
-export default connect(null, mapDispatchToProps)(DodajKategoriju);
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({dodajKategoriju}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DodajKategoriju);

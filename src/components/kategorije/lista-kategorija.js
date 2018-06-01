@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { ucitajKategorije } from "../../actions";
+
 
 class ListaKategorija extends Component {
 
-    componentDidMount = () => {
-        this.props.ucitajKategorije();
-    }
 
     kategorijeRender(kategorije) {
         if(kategorije) {
@@ -15,7 +11,7 @@ class ListaKategorija extends Component {
                 return (
                     <tr key={index}>
                         <td>{index+1}</td>
-                        <td>{kategorija}</td>
+                        <td>{kategorija.name}</td>
                     </tr>
                 );
             });
@@ -24,7 +20,7 @@ class ListaKategorija extends Component {
 
     render() {
         return (
-            <section id="pos">
+            <section>
                 <div className="container">
                     <div className="row">
                         <div className="col">
@@ -54,12 +50,8 @@ class ListaKategorija extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        kategorije: state.posts
+        kategorije: state.app.kategorije
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ucitajKategorije}, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ListaKategorija)
+export default connect(mapStateToProps, null)(ListaKategorija)
